@@ -1,0 +1,131 @@
+/* Quita espacio del navegador (opcional) */
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #333333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #ff6f61, #ff7e5f);
+  border-bottom: 2px solid #ff5e3a;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #ffffff !important;
+}
+
+/* Caja donde se encuentra la imagen */
+.profile-box {
+  width: 250px;  /* Aumenta el tamaño del círculo */
+  height: 250px;  /* Aumenta el tamaño del círculo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;  /* Hace que la caja sea redonda */
+  overflow: hidden;  /* Oculta cualquier parte de la imagen que sobresalga */
+}
+
+/* Hace que la imagen ocupe todo el espacio disponible dentro de la caja y sea redonda */
+.profile-box img {
+  width: 100%;  /* Hace que la imagen ocupe todo el espacio disponible */
+  height: 100%;  /* Ajusta la altura para que se llene completamente */
+  object-fit: cover;  /* Asegura que la imagen se ajuste sin perder proporción */
+  border-radius: 50%;  /* Asegura que la imagen sea redonda */
+}
+
+/* Botón "Contáctame" */
+.btn-outline-light {
+  background-color: #ff5e3a; /* Fondo naranja (igual al de "Ver habilidades") */
+  border: none; /* Sin borde */
+  color: #ffffff; /* Texto blanco */
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+  text-align: center; /* Centra el texto del botón */
+}
+
+.btn-outline-light:hover {
+  background-color: #ff7e5f; /* Fondo cuando se pasa el ratón */
+  color: #ffffff; /* Mantener el texto blanco */
+}
+
+/* Botón "Ver habilidades" (sin cambios, solo se deja para referencia) */
+.btn-brand {
+  background: #ff5e3a;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.btn-brand:hover {
+  background: #ff7e5f;
+}
+
+/* Footer */
+footer {
+  background: #ff6f61;
+  color: #ffffff;
+  border-top: 3px solid #ff5e3a;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  margin-top: auto;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* Ajuste para las imágenes de los proyectos, asegurando que todas tengan el mismo tamaño */
+.card img {
+  width: 100%;
+  height: 360px;  /* Ajusta la altura de las imágenes */
+  object-fit: cover;  /* Hace que la imagen ocupe todo el espacio sin perder la proporción */
+  border-radius: 10px;
+}
+
+/* Centra los números en la lista de habilidades */
+.skills-list {
+  counter-reset: skill-item; /* Inicia el contador */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ff7e5f;
+  font-size: 18px;
+}
+
+/* Añadir número antes de cada habilidad */
+.skills-list li::before {
+  content: counter(skill-item) ". "; /* Agrega el número antes del texto */
+  counter-increment: skill-item; /* Incrementa el contador */
+  margin-right: 10px;
+  font-weight: bold;
+  color: #ff6f61; /* El color del número */
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .profile-box img {
+    width: 100%;
+    height: auto;
+  }
+}
